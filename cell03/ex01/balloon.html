@@ -4,50 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="backgroound.css">
+    <title>Balloon Game</title>
     <script>
-        var color = ["red", "blue", "green", "yellow", "black"];
-        var line = 200
-        function randomcolorbg() {
-            col_index = Math.floor(Math.random() * 5);
-            selected_col = color[col_index];
-            let balloon = document.getElementById("balloon")
-            line = line+10
-            if (line > 420){
-                line = 200
-            }
-            balloon.style = `background-color:${selected_col}; height: ${line}px;width: ${line}px;`
-         
+        let colors = ["red", "green", "blue", "green"];
+        let currentColorIndex = 0;
+        let balloonSize = 200;
 
+ 
+        function balloonClick() {
+            let balloon = document.getElementById("balloon");
+
+            
+            balloonSize += 10;
+
+            if (balloonSize > 420) {
+                balloonSize = 200;
+            }
+
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+
+  
+            updateBalloon(balloon);
         }
 
+       
+        function balloonMouseLeave() {
+            let balloon = document.getElementById("balloon");
+
+
+            if (balloonSize > 200) {
+                balloonSize -= 5;
+            }
+
+            currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length;
+
+
+            updateBalloon(balloon);
+        }
+
+        
+        function updateBalloon(balloon) {
+            balloon.style.height = balloonSize + "px";
+            balloon.style.width = balloonSize + "px";
+            balloon.style.backgroundColor = colors[currentColorIndex];
+        }
     </script>
     <style>
-       .balloon {
+        .balloon {
             height: 200px;
             width: 200px;
-        
             border-radius: 50%;
+            background-color: red;
             display: inline-block;
-            cursor: pointer; 
-            transition: all 0.3s ease; 
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
+
         .container {
             display: flex;
             justify-content: center;
-            align-items: center; 
-            height: 100vh;      
+            align-items: center;
+            height: 100vh;
         }
-        
-        
     </style>
 </head>
 
-<body  onload="randomcolorbg()">
+<body>
     <div class="container">
-    <div class="balloon" id="balloon"  onclick="randomcolorbg()"></div>
-</div>
+        <div class="balloon" id="balloon" onclick="balloonClick()" onmouseleave="balloonMouseLeave()"></div>
+    </div>
 </body>
 
 </html>
