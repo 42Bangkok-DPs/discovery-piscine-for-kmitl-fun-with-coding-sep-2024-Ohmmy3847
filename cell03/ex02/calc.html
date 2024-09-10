@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculate() {
+            let finput = parseFloat(document.getElementById("fist_input").value)
+            
+            let linput = parseFloat(document.getElementById("second_input").value)
+            let operation = document.getElementById("operation").value
+            if (finput < 0 || linput < 0) {
+                alert("Error :(")
+            }
+            else if (operation == "/" && linput == 0) {
+                console.log("It's over 9000!")
+                alert("It's over 9000!")
+                
+            }
+            else{
+
+                let result = ''
+                if (operation == "+"){
+                    result = finput+linput
+                }
+                else if (operation == "-"){
+                    result = finput-linput
+                }
+                else if (operation == "*"){
+                    result = finput*linput
+                }
+                else if (operation == "/"){
+                    result = finput*linput
+                }
+                else if (operation == "%"){
+                    result = finput*linput
+                }
+                console.log(result)
+                alert(result)
+
+            }
+            function showAlert() {
+                alert('Please, use me...');
+            }
+            setInterval(showAlert, 30000);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="number" id="fist_input">
+        <select name="" id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="second_input">
+        <button onclick="calculate()">Try me!</button>
+    </div>
+
+</body>
+
+</html>

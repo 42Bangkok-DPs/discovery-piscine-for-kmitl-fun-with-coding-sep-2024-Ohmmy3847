@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="backgroound.css">
+    <script>
+        var color = ["red", "blue", "green", "yellow", "black"];
+        var line = 200
+        function randomcolorbg() {
+            col_index = Math.floor(Math.random() * 5);
+            selected_col = color[col_index];
+            let balloon = document.getElementById("balloon")
+            line = line+10
+            if (line > 420){
+                line = 200
+            }
+            balloon.style = `background-color:${selected_col}; height: ${line}px;width: ${line}px;`
+         
+
+        }
+
+    </script>
+    <style>
+       .balloon {
+            height: 200px;
+            width: 200px;
+        
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: 100vh;      
+        }
+        
+        
+    </style>
+</head>
+
+<body  onload="randomcolorbg()">
+    <div class="container">
+    <div class="balloon" id="balloon"  onclick="randomcolorbg()"></div>
+</div>
+</body>
+
+</html>

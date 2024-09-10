@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="backgroound.css">
+    <script>
+    var color = ["red", "blue", "green", "yellow", "black"];
+
+function randomcolorbg(){
+    col_index = Math.floor(Math.random()*5);
+    selected_col = color[col_index];
+    let body = document.getElementById("body")
+    body.style = `background-color:${selected_col};`
+}
+
+    </script>
+</head>
+<body id="body" onload="randomcolorbg()">
+    <div>
+        <button type="button" onclick="randomcolorbg()">Change Color</button>
+    </div>
+    
+</body>
+</html>
