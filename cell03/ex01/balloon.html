@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balloon Game</title>
     <script>
-        let colors = ["red", "green", "blue", "green"];
+        let colors = ["red", "green", "blue"];
         let currentColorIndex = 0;
         let balloonSize = 200;
 
@@ -27,10 +27,8 @@
             updateBalloon(balloon);
         }
 
-       
         function balloonMouseLeave() {
             let balloon = document.getElementById("balloon");
-
 
             if (balloonSize > 200) {
                 balloonSize -= 5;
