@@ -1,0 +1,23 @@
+.col {
+    display: flex;
+    width: 50%;
+    float: left;
+    
+    align-items: center;
+    background: greenyellow;
+}
+
+.col-right {
+    float: right;
+    background: rgb(255, 160, 241);
+}
+p {
+    padding-left: 10px;
+
+}
+.container {
+    display: flex;
+    height: 100vh;
+   
+}
+
