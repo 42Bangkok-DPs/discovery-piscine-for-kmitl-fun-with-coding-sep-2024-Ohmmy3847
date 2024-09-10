@@ -4,66 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Basic Calculator</title>
     <script>
         function calculate() {
-            let finput = parseFloat(document.getElementById("fist_input").value)
+            let leftOperand = parseFloat(document.getElementById("first_input").value);
+            let rightOperand = parseFloat(document.getElementById("second_input").value);
+            let operation = document.getElementById("operation").value;
+
+        
+            if (leftOperand < 0 || rightOperand < 0) {
+                alert("Error :(");
+                return;
+            }
+
             
-            let linput = parseFloat(document.getElementById("second_input").value)
-            let operation = document.getElementById("operation").value
-            if (finput < 0 || linput < 0) {
-                alert("Error :(")
+            if ((operation == "/" || operation == "%") && rightOperand == 0) {
+                console.log("It's over 9000!");
+                alert("It's over 9000!");
+                return; 
             }
-            else if (operation == "/" && linput == 0) {
-                console.log("It's over 9000!")
-                alert("It's over 9000!")
-                
-            }
-            else{
 
-                let result = ''
-                if (operation == "+"){
-                    result = finput+linput
-                }
-                else if (operation == "-"){
-                    result = finput-linput
-                }
-                else if (operation == "*"){
-                    result = finput*linput
-                }
-                else if (operation == "/"){
-                    result = finput*linput
-                }
-                else if (operation == "%"){
-                    result = finput*linput
-                }
-                console.log(result)
-                alert(result)
-
+            let result = 0;
+            switch (operation) {
+                case "+":
+                    result = leftOperand + rightOperand;
+                    break;
+                case "-":
+                    result = leftOperand - rightOperand;
+                    break;
+                case "*":
+                    result = leftOperand * rightOperand;
+                    break;
+                case "/":
+                    result = leftOperand / rightOperand;
+                    break;
+                case "%":
+                    result = leftOperand % rightOperand;
+                    break;
+                default:
+                    alert("Unknown operation!");
+                    return;  
             }
-            function showAlert() {
-                alert('Please, use me...');
-            }
-            setInterval(showAlert, 30000);
 
+            console.log(result);
+            alert(result);
         }
+
+      
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
     </script>
 </head>
 
 <body>
     <div>
-        <input type="number" id="fist_input">
-        <select name="" id="operation">
+        
+        <input type="number" id="first_input" placeholder="Left Operand">
+        
+       
+        <select id="operation">
             <option value="+">+</option>
             <option value="-">-</option>
             <option value="*">*</option>
             <option value="/">/</option>
             <option value="%">%</option>
         </select>
-        <input type="number" id="second_input">
+
+      
+        <input type="number" id="second_input" placeholder="Right Operand">
+        
+      
         <button onclick="calculate()">Try me!</button>
     </div>
-
 </body>
 
 </html>
