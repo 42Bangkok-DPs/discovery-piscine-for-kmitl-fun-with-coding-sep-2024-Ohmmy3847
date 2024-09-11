@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function calculate() {
+                let leftOperand = parseFloat($("#first_input").val());
+                let rightOperand = parseFloat($("#second_input").val());
+                let operation = $("#operation").val();
+
+                if (leftOperand < 0 || rightOperand < 0) {
+                    alert("Error :(");
+                    return;
+                }
+
+                if ((operation === "/" || operation === "%") && rightOperand === 0) {
+                    console.log("It's over 9000!");
+                    alert("It's over 9000!");
+                    return; 
+                }
+
+                let result = 0;
+                switch (operation) {
+                    case "+":
+                        result = leftOperand + rightOperand;
+                        break;
+                    case "-":
+                        result = leftOperand - rightOperand;
+                        break;
+                    case "*":
+                        result = leftOperand * rightOperand;
+                        break;
+                    case "/":
+                        result = leftOperand / rightOperand;
+                        break;
+                    case "%":
+                        result = leftOperand % rightOperand;
+                        break;
+                    default:
+                        alert("Unknown operation!");
+                        return;  
+                }
+
+                console.log(result);
+                alert(result);
+            }
+
+            // Set up the click event handler
+            $("#calculate_button").click(function() {
+                calculate();
+            });
+
+            // Set up the interval alert
+            setInterval(function() {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="number" id="first_input" placeholder="Left Operand">
+        <select id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="second_input" placeholder="Right Operand">
+        <button id="calculate_button">Try me!</button>
+    </div>
+</body>
+
+</html>

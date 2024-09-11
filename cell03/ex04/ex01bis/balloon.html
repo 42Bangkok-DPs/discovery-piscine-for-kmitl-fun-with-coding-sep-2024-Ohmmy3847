@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Game</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let colors = ["red", "green", "blue"];
+            let currentColorIndex = 0;
+            let balloonSize = 200;
+            console.log(balloonSize)
+            function updateBalloon() {
+                $("#balloon").css({
+                    "height": balloonSize + "px",
+                    "width": balloonSize + "px",
+                    "background-color": colors[currentColorIndex]
+                })
+            }
+
+            $("#balloon").on("click", function () {
+                balloonSize += 10
+
+                if (balloonSize > 420) {
+                    balloonSize = 200
+                }
+                currentColorIndex = (currentColorIndex + 1) % colors.length
+                console.log(balloonSize)
+                updateBalloon()
+            })
+
+            $("#balloon").on("mouseleave", function(){
+                balloonSize -= 5
+                if (balloonSize < 200) {
+                    balloonSize = 200
+                }
+                currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length;
+              
+                updateBalloon()
+            })
+
+        })
+
+    </script>
+    <style>
+        .balloon {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: red;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="balloon" id="balloon"></div>
+    </div>
+</body>
+
+</html>
