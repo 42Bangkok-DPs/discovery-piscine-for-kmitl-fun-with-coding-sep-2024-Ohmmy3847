@@ -6,15 +6,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="backgroound.css">
     <script>
-    var color = ["red", "blue", "green", "yellow", "black"];
+    function randomcolorbg() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+    
+        const rgbColor = `rgb(${r}, ${g}, ${b})`;
 
-function randomcolorbg(){
-    col_index = Math.floor(Math.random()*5);
-    selected_col = color[col_index];
-    let body = document.getElementById("body")
-    body.style = `background-color:${selected_col};`
-}
-
+        document.body.style.backgroundColor = rgbColor;
+    }
+    
     </script>
 </head>
 <body id="body" onload="randomcolorbg()">
