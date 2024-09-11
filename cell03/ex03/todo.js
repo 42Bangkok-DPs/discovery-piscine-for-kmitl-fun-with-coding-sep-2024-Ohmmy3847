@@ -1,11 +1,11 @@
 window.onload = function() {
     loadTasks();
-    console.log(document.cookie)
+    console.log(document.cookie);
     document.getElementById('new-task-btn').onclick = function() {
         let task = prompt("Enter a new task:");
         if (task) {
-            addTask(task, true); // เพิ่ม task ใหม่ที่ด้านบน
-            saveTasks(); // บันทึก tasks ใหม่
+            addTask(task, true); 
+            saveTasks(); 
         }
     };
 };
@@ -40,11 +40,15 @@ function saveTasks() {
 function loadTasks() {
     let cookies = document.cookie.split('; ');
     let taskCookie = cookies.find(row => row.startsWith('tasks='));
-    console.log(taskCookie)
+    console.log(taskCookie);
+    
     if (taskCookie) {
-        let tasks = JSON.parse(taskCookie.split('=')[1]);
-        console.log(tasks)
-        tasks.forEach(task => addTask(task, false));
+        try {
+            let tasks = JSON.parse(taskCookie.split('=')[1]);
+            tasks.forEach(task => addTask(task, false));
+        } catch (e) {
+            console.error("Error parsing tasks from cookie:", e);
+        }
     }
     console.log(cookies);
 }
