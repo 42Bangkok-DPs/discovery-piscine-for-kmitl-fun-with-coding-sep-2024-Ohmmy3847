@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .hover-opacity {
+            transition: opacity 1.5s ease;
+            opacity: 1;
+        }
+        .hover-scale {
+            transition: transform 1.5s ease, opacity 1.5s ease;
+        }
+        .gradient-overlay-right {
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <body class="bg-black text-white h-screen flex flex-col">
+
+        <div class="flex-grow flex flex-col justify-center items-center mt-20"> 
+            <h1 class="sm:text-8xl text-4xl font-bold text-gray-200 text-center">Water Team</h1>
+          </div>
+       
+        <div class="flex flex-col md:flex-row h-auto md:h-auto md:min-h-screen">
+       
+          <div id="person1" class="w-full md:w-1/2 relative hover-scale cursor-pointer p-4 md:p-8">
+            <img src="img/Ohm.png" alt="Person 1" class="object-cover w-full h-full md:h-screen rounded-md">
+            <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-20 text-center pt-48">
+              <h1 class="text-4xl font-bold text-gray-200">whomrags</h1>
+              <button id="btnPerson1" class="mt-4 px-4 py-2 bg-gray-700 text-gray-200 hover:bg-white hover:text-black rounded-lg">View Profile</button>
+            </div>
+          </div>
+          
+          <!-- Right Side - Person 2 with Muted Dark Orange Background -->
+          <div id="person2" class="w-full md:w-1/2 relative hover-scale cursor-pointer p-4 md:p-8 hover-opacity">
+            <img src="img/arther.png" alt="Person 2" class="object-cover w-full h-full md:h-screen rounded-md">
+            <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-20 text-center pt-48">
+              <h1 class="text-4xl font-bold text-gray-200">watpromf</h1>
+              <button id="btnPerson2" class="mt-4 px-4 py-2 bg-gray-700 text-gray-200 hover:bg-white hover:text-black rounded-lg">View Profile</button>
+            </div>
+          </div>
+          
+        </div>
+      
+
+    <script>
+        $('#btnPerson1').click(function () {
+            window.location.href = 'whomrags/index.html';
+        });
+        $('#btnPerson2').click(function () {
+            window.location.href = 'watpromf/index.html';
+        });
+    </script>
+</body>
+</html>

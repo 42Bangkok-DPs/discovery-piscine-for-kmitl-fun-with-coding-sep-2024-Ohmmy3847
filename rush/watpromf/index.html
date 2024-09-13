@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Web-Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-2" href="#hero">≽^•⩊•^≼</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                        <a class="nav-link fs-5" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#experiences">Experiences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="parallax d-flex align-items-center">
+        <div class="content fade-in-up">
+            <h2 class="mb-4">Watin Promfiy</h2>
+            <p class="fs-4 mb-4">Aspiring Data Scientist | AI Enthusiast | Problem Solver</p>
+            <a href="#about" class="btn btn-custom">Explore My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in-up">About Me</h2>
+            <div class="row fade-in-up">
+                <div class="col-md-6 mb-4">
+                    <h3 class="mb-3">Who I Am</h3>
+                    <p>I am a passionate data science student with expertise in artificial intelligence, machine learning, and deep learning. My goal is to contribute to innovative projects and teams in the field of artificial intelligence, solving real-world problems through data-driven approaches.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h3 class="mb-3">Education</h3>
+                    <ul>
+                        <li>B.Sc. Information Technology - Data Science and Business Analytics, King Mongkut's Institute of Technology Ladkrabang (2023-Present)</li>
+                        <li>Assumption College Samutprakarn (2017-2023)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section" style="background-color: var(--secondary-color);">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in-up">Skills</h2>
+            <div class="row justify-content-center fade-in-up">
+                <div class="col-md-10">
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">R</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Machine Learning</div>
+                    <div class="skill-item">Deep Learning</div>
+                    <div class="skill-item">Natural Language Processing</div>
+                    <div class="skill-item">Computer Vision</div>
+                    <div class="skill-item">Data Visualization</div>
+                    <div class="skill-item">Statistical Analysis</div>
+                    <div class="skill-item">TensorFlow</div>
+                    <div class="skill-item">PyTorch</div>
+                    <div class="skill-item">Scikit-learn</div>
+                    <div class="skill-item">Pandas</div>
+                    <div class="skill-item">NumPy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in-up">Experiences</h2>
+            <div class="row" id="experienceCards">
+                <!-- Experience cards will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section" style="background-color: var(--secondary-color);">
+        <div class="container text-center">
+            <h2 class="mb-5 fade-in-up">Get In Touch</h2>
+            <div class="fade-in-up">
+                <p class="mb-4">Feel free to reach out for collaborations or just a friendly hello</p>
+                <div>
+                    <a href="mailto:66070184@kmitl.ac.th" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/watin-promfiy-6b9ba221a/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/E27-25" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-3">
+        <div class="container text-center">
+            © 2024 Watin Promfiy. All rights reserved.
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
